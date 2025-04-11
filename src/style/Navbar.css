@@ -1,7 +1,7 @@
 .navbar {
     width: 100%;
     z-index: 100;
-    background: url('../assets/img/navback.png') no-repeat center center/cover; /* Background Image */
+    background: url('../assets/img/bg.avif') no-repeat center center/cover; /* Background Image */
 }
 
 /* Lower Opacity for Background */
@@ -12,13 +12,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.8); /* Light overlay */
+    background: rgba(255, 255, 255, 0.89); /* Light overlay */
     z-index: -1;
 }
 
 /* Navbar Brand */
 .navbar-brand {
-    color: rgb(255, 255, 255);
+    /* color: rgb(255, 255, 255); */
     font-size: 25px;
     font-weight: bold;
 }
@@ -28,6 +28,7 @@
     height: auto;
 }
 
+/* Navbar Links */
 /* Navbar Links */
 .navbar-nav {
     display: flex;
@@ -42,10 +43,31 @@
     color: black;
     font-weight: 500;
     transition: color 0.3s ease-in-out;
+    position: relative;
 }
 
 .navbar-nav .nav-link:hover {
     color: #0078FF; /* Change color on hover */
+}
+
+/* Active link styling with underline */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-item.active .nav-link {
+    color: #0078FF !important; /* Same color as hover for active links */
+    font-weight: 600; /* Optional: make active link slightly bolder */
+}
+
+/* Add underline to active link */
+.navbar-nav .nav-link.active::after,
+.navbar-nav .nav-item.active .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0078FF;
+    display: block;
 }
 
 

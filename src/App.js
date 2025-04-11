@@ -5,15 +5,21 @@ import Footer from "./Component/Footer/Footer";
 import Navbar from "./Component/Navbar/Navbar";
 import Hero from "./Component/Hero/Hero";
 import Home from "./Component/Home/Home";
+import Naga from "./Component/DrNaga/Naga";
+import Services from "./Component/Services/Services";
+import Team from "./Component/Team/Team";
+import DoctorsCarousel from "./Component/DoctorsCarousel/DoctorsCarousel";
+
+
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home/>} />
       </Routes>
-        <Footer />
+        {/* <Footer /> */}
     </BrowserRouter>
   );
 }

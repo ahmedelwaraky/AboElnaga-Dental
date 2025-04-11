@@ -1,0 +1,222 @@
+:root {
+    --primary-color: #2c7db1;
+    --white: #ffffff;
+    --black: #000000;
+    --scroll-width: 3080px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .team-section {
+    position: relative;
+    padding: 60px 20px;
+    margin: 0 auto;
+    text-align: center;
+    direction: rtl;
+    z-index: 1;
+    overflow: hidden; /* Ensure overflow is hidden to manage layers */
+  }
+  
+  .team-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('../assets/img/bg1.jpg');
+    /* background-size: cover; */
+    background-position: center;
+    opacity: 0.1; /* Only affects the background image */
+    z-index: -1; /* Push it behind everything else */
+  }
+  
+  .team-section .overlay {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+  }
+  .team{
+    position: relative;
+    z-index: 3;
+  }
+  
+  
+  .section-heading {
+    margin-bottom: 50px;
+  }
+  
+  .section-heading h2 {
+    font-size: 36px;
+    color: var( --primary-color);
+    position: relative;
+    padding-bottom: 15px;
+    display: inline-block;
+    font-weight: 700;
+  }
+  
+  .section-heading h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: var(--white);
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    background-color: #00000056;
+    background-size: cover;
+  }
+  
+  .carousel-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 25s linear infinite;
+  }
+  
+  .carousel-container:hover .carousel-track {
+    animation-play-state: paused;
+  }
+  
+  .doctor-card {
+    min-width: 250px;
+    flex: 0 0 250px;
+    margin: 0 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .doctor-img-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    position: relative;
+    overflow: visible;
+  }
+  
+  .doctor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .img-spinner {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    border-radius: 50%;
+    border: 3px dotted var(--primary-color);
+    animation: spin 8s linear infinite;
+    z-index: 0;
+  }
+  
+  .doctor-info {
+    padding: 15px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .doctor-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .doctor-specialty {
+    font-size: 16px;
+    color:var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .doctor-card {
+      min-width: 200px;
+      flex: 0 0 200px;
+    }
+  
+    .doctor-img-container {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .doctor-name {
+      font-size: 18px;
+    }
+  
+    .doctor-specialty {
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .doctor-card {
+      min-width: 180px;
+      flex: 0 0 180px;
+      margin: 0 10px;
+    }
+  
+    .doctor-img-container {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .section-heading h2 {
+      font-size: 28px;
+    }
+  
+    .doctor-name {
+      font-size: 16px;
+    }
+  
+    .doctor-specialty {
+      font-size: 12px;
+    }
+  }
