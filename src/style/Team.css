@@ -74,7 +74,7 @@
     position: absolute;
     width: 80px;
     height: 4px;
-    background-color: var(--white);
+    background-color: var(--primary-color);
     bottom: 0;
     right: 50%;
     transform: translateX(50%);
@@ -88,7 +88,6 @@
     padding: 60px 0;
     display: flex;
     justify-content: center;
-    background-color: #00000056;
     background-size: cover;
   }
   
@@ -142,14 +141,14 @@
   
   .doctor-info {
     padding: 15px;
-    color: rgb(255, 255, 255);
+    color: var(--primary-color);
   }
   
   .doctor-name {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 5px;
-    color: rgb(255, 255, 255);
+    color: var(--primary-color);
   }
   
   .doctor-specialty {
