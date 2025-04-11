@@ -1,37 +1,31 @@
 import React, { useEffect, useState } from "react";
 import "../../style/Hero.css";
-import hero1 from '../../assets/img/Hero1.jpg'; // Import your images
-import hero2 from '../../assets/img/Hero2.jpg'; // Import your images
-import hero3 from '../../assets/img/Hero3.jpg'; // Import your images
-
-
-
+import hero1 from '../../assets/img/Hero1.jpg';
+import hero2 from '../../assets/img/Hero2.jpg';
+import hero3 from '../../assets/img/Hero3.jpg';
+import { FaCalendarAlt, FaPhoneAlt } from 'react-icons/fa';
 
 export default function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
-
   
   const slides = [
     {
-      image: hero1, // Use imported image
-      title: 'Mountain Adventures',
-      description: 'Discover the highest peaks',
-      scale: 1.2,
-      info: 'Elevation: 8,848m'
+      image: hero1,
+      title: 'رعاية أسنان متميزة',
+      description: 'نهتم بصحة وجمال ابتسامتك',
+      info: 'خبرة أكثر من 15 عام'
     },
     {
-      image: hero2, // Different image
-      title: 'Enchanted Forest',
-      description: 'Explore mysterious woods',
-      scale: 1.3,
-      info: '500+ species'
+      image: hero2,
+      title: 'تقنيات حديثة',
+      description: 'أحدث الأجهزة والمعدات العالمية',
+      info: 'علاجات متطورة بأيدي خبيرة'
     },
     {
-      image: hero3, // Different image
-      title: 'Ocean Depths',
-      description: 'Dive into the blue',
-      scale: 1.4,
-      info: 'Depth: 3,700m'
+      image: hero3,
+      title: 'فريق طبي متخصص',
+      description: 'أطباء ذوي خبرة في جميع تخصصات طب الأسنان',
+      info: 'رعاية مخصصة لكل مريض'
     }
   ];
 
@@ -42,46 +36,61 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-
-
-
   const goToSlide = (index) => {
     setActiveIndex(index);
   };
 
   return (
-    <>
-          <div className="slider-container">
-      <div className="slider">
-        {slides.map((slide, index) => (
-          <div
-          key={index}
-          className={`slide ${index === activeIndex ? 'active' : ''}`}
-          style={{ 
-            backgroundImage: `url(${slide.image})`,
-            transform: `translateX(${(index - activeIndex) * 100}%) scale(${index === activeIndex ? 1.1 : 0.8})`
-          }}
-        >
-            <div className="slide-content">
-              <h3 className="slide-title">{slide.title}</h3>
-              <p className="slide-description">{slide.description}</p>
-              <div className="slide-info">{slide.info}</div>
+    <div className="hero-section">
+      <div className="slider-container">
+        <div className="slider">
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className={`slide ${index === activeIndex ? 'active' : ''}`}
+              style={{
+                backgroundImage: `url(${slide.image})`,
+                transform: index === activeIndex ? 'scale(1)' : 'scale(0.8)'
+              }}
+            >
+              <div className="overlay"></div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="hero-content">
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-lg-6 col-md-8">
+                <div className="content-box">
+                  <h1 className="main-title">{slides[activeIndex].title}</h1>
+                  <p className="main-description">{slides[activeIndex].description}</p>
+                  <div className="info-badge">{slides[activeIndex].info}</div>
+                  
+                  <div className="hero-buttons">
+                    <button className="btn appointment-btn">
+                      <FaCalendarAlt /> احجز موعدًا الآن
+                    </button>
+                    <button className="btn contact-btn">
+                      <FaPhoneAlt /> اتصل بنا
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
-
-      <div className="slider-controls">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`dot ${index === activeIndex ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-          />
-        ))}
+        </div>
+        
+        <div className="slider-controls">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className={`dot ${index === activeIndex ? 'active' : ''}`}
+              onClick={() => goToSlide(index)}
+            />
+          ))}
+        </div>
       </div>
     </div>
-
-    </>
   );
 }

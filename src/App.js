@@ -9,7 +9,7 @@ import Naga from "./Component/DrNaga/Naga";
 import Services from "./Component/Services/Services";
 import Team from "./Component/Team/Team";
 import DoctorsCarousel from "./Component/DoctorsCarousel/DoctorsCarousel";
-
+import Partners from "./Component/Partners/Partners";
 
 
 function App() {

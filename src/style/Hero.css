@@ -1,131 +1,255 @@
+/* Hero Section Styles */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  direction: rtl;
+}
+
 .slider-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
-  }
-  
-  .slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    transform: scale(0.8);
-    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0.6;
-    filter: grayscale(30%);
-    z-index: 1;
-  }
-  
-  .slide.active {
-    transform: scale(1.1);
-    opacity: 1;
-    filter: grayscale(0%);
-    z-index: 2;
-  }
-  /* Add zoom animation */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.4) 100%);
+}
+
+/* Smooth zoom animation */
 @keyframes zoomEffect {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.7);
-    }
+  0% {
+    transform: scale(1);
   }
-  
-  .slide.active {
-    animation: zoomEffect 20s linear infinite alternate;
+  100% {
+    transform: scale(1.1);
   }
-  /* Keep other styles the same but adjust positioning */
-  .slide::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
-  }
-  
-  
-  .slide.active {
+}
+
+.slide.active {
+  animation: zoomEffect 12s linear infinite alternate;
+}
+
+.hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+}
+
+.content-box {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  color: white;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s forwards 0.5s;
+  border-right: 4px solid #0078FF;
+}
+
+@keyframes fadeInUp {
+  to {
     opacity: 1;
-  }
-  
-  .slide:not(.active) {
-    opacity: 0.6;
-    filter: grayscale(30%);
-  }
-  
-  .slide-content {
-    position: absolute;
-    bottom: 15%;
-    left: 10%;
-    color: white;
-    transform: translateY(20px);
-    transition: transform 0.5s ease;
-    opacity: 0;
-  }
-  
-  .slide.active .slide-content {
     transform: translateY(0);
-    opacity: 1;
+  }
+}
+
+.main-title {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.main-description {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.info-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  background: rgba(0, 120, 255, 0.3);
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  margin-bottom: 30px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.appointment-btn {
+  background-color: #0078FF;
+  color: white;
+}
+
+.appointment-btn:hover {
+  background-color: #0055b8;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 86, 184, 0.3);
+}
+
+.contact-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.contact-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-3px);
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 5;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #0078FF;
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(0, 120, 255, 0.5);
+}
+
+.dot:hover {
+  transform: scale(1.2);
+  background: rgba(255,255,255,0.8);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .main-title {
+    font-size: 2.5rem;
   }
   
-  .slide-title {
-    font-size: 2.5em;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  .main-description {
+    font-size: 1.2rem;
   }
   
-  .slide-description {
-    font-size: 1.2em;
-    margin: 10px 0;
+  .content-box {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2rem;
   }
   
-  .slide-info {
-    padding: 8px 15px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    display: inline-block;
+  .main-description {
+    font-size: 1.1rem;
   }
   
-  .slider-controls {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
+  .hero-buttons {
+    flex-direction: column;
     gap: 10px;
-    z-index: 2;
   }
   
-  .dot {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(255,255,255,0.5);
-    cursor: pointer;
-    transition: all 0.3s ease;
+  .content-box {
+    padding: 25px;
+    margin: 0 15px;
+    border-right-width: 3px;
   }
   
-  .dot.active {
-    background: #fff;
-    transform: scale(1.3);
+  .slide .overlay {
+    background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%);
+  }
+}
+
+@media (max-width: 576px) {
+  .main-title {
+    font-size: 1.8rem;
   }
   
-  .dot:hover {
-    transform: scale(1.2);
+  .main-description {
+    font-size: 1rem;
+    margin-bottom: 15px;
   }
+  
+  .info-badge {
+    padding: 6px 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .content-box {
+    padding: 20px;
+  }
+}

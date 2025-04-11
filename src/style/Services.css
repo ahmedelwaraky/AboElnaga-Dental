@@ -14,7 +14,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.92);
     z-index: 1;
   }
   
@@ -239,3 +239,206 @@
       font-size: 14px;
     }
   }
+  /* Carousel Styles */
+.services-slider {
+  position: relative;
+  padding: 0 40px;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0078FF;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.slick-arrow:hover {
+  background: #0055b8;
+  cursor: pointer;
+}
+
+.prev-arrow {
+  left: -40px;
+}
+
+.next-arrow {
+  right: -40px;
+}
+
+.slick-arrow svg {
+  font-size: 14px;
+}
+
+/* Responsive Arrows */
+@media (max-width: 768px) {
+  .services-slider {
+    padding: 0 30px;
+  }
+  
+  .slick-arrow {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
+  .prev-arrow {
+    left: -30px;
+  }
+  
+  .next-arrow {
+    right: -30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-slider {
+    padding: 0 25px;
+  }
+  
+  .slick-arrow {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+  
+  .prev-arrow {
+    left: -25px;
+  }
+  
+  .next-arrow {
+    right: -25px;
+  }
+}
+
+
+.slick-arrow i {
+  font-size: 14px;
+  margin: 0 5px;
+}
+
+/* Updated service card styles for equal size */
+.service-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 525; /* Fixed height for all cards */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Keep all images consistently sized */
+.service-img {
+  position: relative;
+  overflow: hidden;
+  height: 200px; /* Consistent height */
+}
+
+/* Center active slide zoom effect */
+.slick-center .service-card {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(0, 120, 255, 0.2);
+  z-index: 10;
+}
+
+/* Reset hover when in slider */
+.slick-slide .service-card:hover {
+  transform: translateY(0);
+}
+
+/* Only apply hover effect when not in slider center */
+.slick-center .service-card:hover {
+  transform: scale(1.1);
+}
+
+/* Updated carousel styles with circular buttons */
+.services-slider {
+  position: relative;
+  padding: 0 50px;
+  margin-top: 20px;
+}
+
+/* Circular navigation buttons */
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0077ff8c;
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  z-index: 5;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slick-arrow:hover {
+  background: #0055b8;
+}
+
+.prev-arrow {
+  left: 0;
+}
+
+.next-arrow {
+  right: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .slick-center .service-card {
+    transform: scale(1.08);
+  }
+  
+  .slick-arrow {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-slider {
+    padding: 0 40px;
+  }
+  
+  .slick-center .service-card {
+    transform: scale(1.05);
+  }
+  
+  .slick-arrow {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-slider {
+    padding: 0 35px;
+  }
+  
+  .slick-center .service-card {
+    transform: scale(1.03);
+  }
+  
+  .slick-arrow {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+}
