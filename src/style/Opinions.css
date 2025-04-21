@@ -1,0 +1,166 @@
+/* TestimonialsSection.css */
+.testimonials-section {
+  position: relative;
+  padding: 60px 20px;
+  margin: 0 auto;
+  text-align: center;
+  direction: rtl;
+  background-image: url('../assets/img/bg1.jpg');
+  background-position: center;
+  overflow: hidden;
+}
+
+.testimonials-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+}
+
+.testimonials-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.section-title {
+  color: #2a6395;
+  font-weight: 700;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-subtitle {
+  color: #777;
+  font-size: 18px;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.patient-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #4aa3df;
+  box-shadow: 0 3px 8px rgba(74, 163, 223, 0.3);
+  margin-left: 15px; /* RTL adjustment */
+}
+
+.patient-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.patient-info {
+  flex-grow: 1;
+}
+
+.patient-name {
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 600;
+}
+
+.patient-status {
+  color: #4aa3df;
+  font-size: 14px;
+  background-color: rgba(74, 163, 223, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.testimonial-body {
+  position: relative;
+}
+
+.quote-icon {
+  color: rgba(74, 163, 223, 0.2);
+  font-size: 24px;
+  margin-left: 8px;
+}
+
+.testimonial-text {
+  color: #666;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #4aa3df;
+  border-color: #4aa3df;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-primary:hover {
+  background-color: #3896d3;
+  border-color: #3896d3;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(74, 163, 223, 0.4);
+}
+
+.show {
+  background-color: #4aa3df !important;
+  color: #fff !important;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.show:hover {
+  background-color: #3896d3 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(74, 163, 223, 0.4);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .patient-image {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .testimonial-card {
+    padding: 20px;
+  }
+}

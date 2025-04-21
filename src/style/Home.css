@@ -1,0 +1,17 @@
+/* Home.css */
+
+/* Add top padding to account for fixed navbar */
+.home {
+    padding-top: 70px; /* Adjust this value to match your navbar height */
+}
+
+/* First section needs extra padding to accommodate the navbar */
+.section:first-of-type {
+    padding-top: 80px; /* Adjust as needed */
+}
+
+/* For better section targeting with smooth scroll */
+.section {
+    padding-top: 60px; /* Space for scrolling to stop above the section */
+    margin-top: -60px; /* Pull the section back up to compensate for padding */
+}

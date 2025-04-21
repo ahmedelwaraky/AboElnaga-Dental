@@ -1,17 +1,6 @@
 import React from "react";
 import "../../style/Partners.css";
 
-import Doc1 from "../../assets/img/Dr-Afnan-Hazem.png";
-import Doc2 from "../../assets/img/Dr-Hadear-Elfiky.png";
-import Doc3 from "../../assets/img/Dr-Mariam-Nagy.png";
-import Doc4 from "../../assets/img/Dr-Mohamed-Abaas.png";
-import Doc5 from "../../assets/img/Dr-Mohamed-salah.png";
-import Doc6 from "../../assets/img/Dr-Nada-Farhat.png";
-import Doc7 from "../../assets/img/Dr-Omar-Samir.png";
-import Doc8 from "../../assets/img/Dr-Wafa-Kasem.png";
-import Doc9 from "../../assets/img/Dr-Yousef-Osama.png";
-import Doc10 from "../../assets/img/Dr-Aya-Ibrahim.png";
-import Doc11 from "../../assets/img/Dr-A-Galal.png";
 import Arabi from "../../assets/img/elaraby-01.webp";
 import We from "../../assets/img/We_logo.svg.png";
 import Vodafone from "../../assets/img/Vodafone_Logo.png";
@@ -24,99 +13,62 @@ export default function Partners() {
       partners: [
         {
           logo: Arabi,
-          altText: "شركة التأمين الطبي أ",
+          altText: "شركة التأمين الصحي المتحدة",
           name: "شركة التأمين الصحي المتحدة",
-          description:
-            "نقدم خدمات طب الأسنان الشاملة لعملاء شركة التأمين الصحي المتحدة بميزات حصرية",
-          services: ["علاج الأسنان الشامل", "تقويم الأسنان", "زراعة الأسنان"],
         },
         {
-          logo: Arabi,
-          altText: "شركة التأمين الطبي ب",
+          logo: We,
+          altText: "مجموعة الضمان للتأمين الصحي",
           name: "مجموعة الضمان للتأمين الصحي",
-          description:
-            "شريك استراتيجي في تقديم خدمات طب الأسنان المميزة لعملاء مجموعة الضمان",
-          services: ["الكشف الدوري", "علاج جذور الأسنان", "تجميل الابتسامة"],
         },
         {
-          logo: Arabi,
-          altText: "شركة التأمين الطبي ج",
+          logo: Vodafone,
+          altText: "الشركة العربية للتأمين الصحي",
           name: "الشركة العربية للتأمين الصحي",
-          description:
-            "نتعاون مع الشركة العربية للتأمين الصحي لتوفير أفضل رعاية لصحة الفم والأسنان",
-          services: ["جراحة الفم", "تركيبات الأسنان", "علاج اللثة"],
         },
       ],
     },
-    {
-      category: "الشركات والمؤسسات",
-      partners: [
-        {
-          logo: We,
-          altText: "شركة أ",
-          name: "مجموعة الخليج للاستثمار",
-          description:
-            "نوفر خدمات طب الأسنان المميزة لموظفي مجموعة الخليج للاستثمار",
-          services: [
-            "الفحص الدوري",
-            "العلاج الوقائي",
-            "برامج العناية بالأسنان",
-          ],
-        },
-        {
-          logo: We,
-          altText: "شركة ب",
-          name: "شركة المستقبل للتقنية",
-          description:
-            "شراكة استراتيجية لتقديم خدمات طب الأسنان المتكاملة لموظفي شركة المستقبل",
-          services: ["تبييض الأسنان", "العلاج التحفظي", "حشوات التجميلية"],
-        },
-        {
-          logo: We,
-          altText: "شركة ج",
-          name: "مجموعة النخبة التعليمية",
-          description:
-            "نتعاون مع مجموعة النخبة التعليمية لتوفير برامج العناية بصحة الفم والأسنان للطلاب والموظفين",
-          services: ["برامج توعوية", "فحوصات دورية", "خطط وقائية"],
-        },
-        {
-          logo: We,
-          altText: "شركة د",
-          name: "شركة الاتصالات المتطورة",
-          description:
-            "نقدم خدمات طب الأسنان الشاملة لموظفي شركة الاتصالات المتطورة وعائلاتهم",
-          services: ["باقات العناية الشاملة", "علاج الأطفال", "زراعة الأسنان"],
-        },
-      ],
-    },
-    {
-      category: "موردي المستلزمات الطبية",
-      partners: [
-        {
-          logo: Vodafone,
-          altText: "شركة مستلزمات طبية أ",
-          name: "شركة الأمل للمستلزمات الطبية",
-          description:
-            "نتعاون مع شركة الأمل للحصول على أحدث المستلزمات والأجهزة في مجال طب الأسنان",
-          services: ["أجهزة متطورة", "مواد عالية الجودة", "تقنيات حديثة"],
-        },
-        {
-          logo: Vodafone,
-          altText: "شركة مستلزمات طبية ب",
-          name: "المجموعة المتحدة للتوريدات الطبية",
-          description:
-            "شراكة استراتيجية مع المجموعة المتحدة لتوفير أفضل المواد والمستلزمات لعيادتنا",
-          services: ["مواد تجميلية", "حشوات متطورة", "مستلزمات تقويم"],
-        },
-      ],
-    },
+    // {
+    //   category: "الشركات والمؤسسات",
+    //   partners: [
+    //     {
+    //       logo: We,
+    //       altText: "مجموعة الخليج للاستثمار",
+    //       name: "مجموعة الخليج للاستثمار",
+    //     },
+    //     {
+    //       logo: Arabi,
+    //       altText: "شركة المستقبل للتقنية",
+    //       name: "شركة المستقبل للتقنية",
+    //     },
+    //     {
+    //       logo: Vodafone,
+    //       altText: "مجموعة النخبة التعليمية",
+    //       name: "مجموعة النخبة التعليمية",
+    //     },
+    //   ],
+    // },
+    // {
+    //   category: "موردي المستلزمات الطبية",
+    //   partners: [
+    //     {
+    //       logo: Arabi,
+    //       altText: "شركة الأمل للمستلزمات الطبية",
+    //       name: "شركة الأمل للمستلزمات الطبية",
+    //     },
+    //     {
+    //       logo: We,
+    //       altText: "المجموعة المتحدة للتوريدات الطبية",
+    //       name: "المجموعة المتحدة للتوريدات الطبية",
+    //     },
+    //   ],
+    // },
   ];
 
   return (
-    <>
-      <section className="partners-section">
-          <div className="container">
-          <div className="section-title">
+    <section className="partners-section">
+      <div className="container">
+        <div className="section-title">
           <h2>شركاؤنا</h2>
           <p>
             نفخر بالتعاون مع أفضل الشركات والمؤسسات في مجال طب الأسنان لتقديم
@@ -128,30 +80,12 @@ export default function Partners() {
           {partnersData.map((categoryData, categoryIndex) => (
             <div className="partner-category" key={`category-${categoryIndex}`}>
               <h3 className="category-title">{categoryData.category}</h3>
-              <div className="partners-grid">
+              <div className="row">
                 {categoryData.partners.map((partner, partnerIndex) => (
-                  <div
-                    className="partner-card"
-                    key={`partner-${categoryIndex}-${partnerIndex}`}
-                  >
-                    <div className="partner-card-inner">
-                      <div className="partner-logo">
-                        <img src={partner.logo} alt={partner.altText} />
-                      </div>
-                      <div className="partner-info">
-                        <h3>{partner.name}</h3>
-                        <p>{partner.description}</p>
-                        <div className="partner-services">
-                          {partner.services.map((service, serviceIndex) => (
-                            <span
-                              className="service-tag"
-                              key={`service-${categoryIndex}-${partnerIndex}-${serviceIndex}`}
-                            >
-                              {service}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+                  <div className="col-md-4 col-sm-6 mb-4" key={`partner-${categoryIndex}-${partnerIndex}`}>
+                    <div className="partner-logo-inner">
+                      <img src={partner.logo} alt={partner.altText} />
+                      <p className="partner-name">{partner.name}</p>
                     </div>
                   </div>
                 ))}
@@ -166,9 +100,7 @@ export default function Partners() {
             تواصل معنا الآن
           </a>
         </div>
-          </div>
-     
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

@@ -1,395 +1,316 @@
 .dental-services {
   position: relative;
-    padding: 100px 0;
-    background-image: url("../assets/img/bg1.jpg");
-    background-position: center;
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
-  }
+  padding: 100px 0;
+  background-image: url("../assets/img/bg1.jpg");
+  background-position: center;
+}
   
-  .dental-services::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.92);
-    z-index: 1;
-  }
+.dental-services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+}
   
-  .dental-services .overlay {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-  }
+.dental-services .overlay {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
   
-  .dental-services .container {
-    position: relative;
-    z-index: 3;
-  }
+.dental-services .container {
+  position: relative;
+  z-index: 3;
+}
   
-  .section-title h2 {
-    font-size: 42px;
-    color: #0056b8d2  ;
-      position: relative;
-    margin-bottom: 20px;
-    font-weight: 800;
-  }
-  
+.section-title h2 {
+  font-size: 42px;
+  color: #2c7db1;
+  position: relative;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
 
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #2c7db1;
+}
   
-  .section-title .subtitle {
-    font-size: 20px;
-    color: #555;
-  }
-  
-  .service-card {
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 120, 255, 0.2);
-  }
-  
-  .service-img {
-    position: relative;
-    overflow: hidden;
-    height: 220px;
-  }
-  
-  .service-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  
-  .service-card:hover .service-img img {
-    transform: scale(1.1);
-  }
-  
-  .service-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 119, 255, 0.356);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .service-card:hover .service-overlay {
-    opacity: 1;
-  }
-  
-  .service-details-btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #fff;
-    color: #0078FF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .service-details-btn:hover {
-    background-color: #0078FF;
-    color: #fff;
-  }
-  
-  .service-content {
-    padding: 25px;
-  }
-  
-  .service-content h3 {
-    font-size: 22px;
-    color: #333;
-    margin-bottom: 15px;
-    font-weight: 600;
-  }
-  
-  .service-content p {
-    font-size: 15px;
-    color: #666;
-    margin-bottom: 20px;
-    line-height: 1.7;
-  }
-  
-  .service-features {
-    margin-bottom: 20px;
-  }
-  
-  .service-features ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .service-features ul li {
-    flex: 0 0 50%;
-    padding: 5px 0;
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .service-features ul li i {
-    color: #0078FF;
-    margin-left: 5px;
-  }
-  
-  .service-btn {
-    display: inline-block;
-    color: #0078FF;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    text-decoration: none;
-  }
-  
-  .service-btn i {
-    margin-right: 5px;
-    font-size: 12px;
-    transition: transform 0.3s ease;
-  }
-  
-  .service-btn:hover {
-    color: #0055b8;
-  }
-  
-  .service-btn:hover i {
-    transform: translateX(-5px);
-  }
-  
-  .appointment-btn {
-    background-color: #0078FF;
-    color: #fff;
-    border: none;
-    font-size: 16px;
-    padding: 12px 30px;
-    font-weight: 500;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  
-  .appointment-btn i {
-    margin-right: 8px;
-  }
-  
-  .appointment-btn:hover {
-    background-color: #0055b8;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 120, 255, 0.3);
-  }
-  
-  @media (max-width: 992px) {
-    .dental-services {
-      padding: 70px 0;
-    }
-    
-    .section-title h2 {
-      font-size: 36px;
-      color: #0055b8 
-       }
-    
-    .service-img {
-      height: 180px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .service-features ul li {
-      flex: 0 0 100%;
-    }
-    
-    .appointment-btn {
-      width: 100%;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .service-content h3 {
-      font-size: 20px;
-    }
-    
-    .service-content p {
-      font-size: 14px;
-    }
-  }
-  /* Carousel Styles */
+.section-title .subtitle {
+  font-size: 20px;
+  color: #555;
+  margin-top: 15px;
+}
+
+/* تحسين حاوية سلايدر الخدمات */
+.services-slider-container {
+  position: relative;
+  padding: 30px 0;
+}
+
+/* ضبط مساحة السلايدر */
 .services-slider {
   position: relative;
-  padding: 0 40px;
+  padding: 20px 50px;
+  margin: 0 -15px;
 }
 
-.slick-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #0078FF;
-  color: #fff;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  z-index: 5;
+/* تعديل حاوية شرائح السلايدر */
+.service-slide {
+  padding: 15px;
+  outline: none !important;
+  transition: transform 0.4s ease;
 }
 
-.slick-arrow:hover {
-  background: #0055b8;
-  cursor: pointer;
+/* حاوية كرت الخدمة لضمان الاتساق */
+.service-card-wrapper {
+  padding: 5px;
+  height: 100%;
 }
 
-.prev-arrow {
-  left: -40px;
-}
-
-.next-arrow {
-  right: -40px;
-}
-
-.slick-arrow svg {
-  font-size: 14px;
-}
-
-/* Responsive Arrows */
-@media (max-width: 768px) {
-  .services-slider {
-    padding: 0 30px;
-  }
-  
-  .slick-arrow {
-    padding: 6px 12px;
-    font-size: 14px;
-  }
-  
-  .prev-arrow {
-    left: -30px;
-  }
-  
-  .next-arrow {
-    right: -30px;
-  }
-}
-
-@media (max-width: 576px) {
-  .services-slider {
-    padding: 0 25px;
-  }
-  
-  .slick-arrow {
-    padding: 5px 10px;
-    font-size: 13px;
-  }
-  
-  .prev-arrow {
-    left: -25px;
-  }
-  
-  .next-arrow {
-    right: -25px;
-  }
-}
-
-
-.slick-arrow i {
-  font-size: 14px;
-  margin: 0 5px;
-}
-
-/* Updated service card styles for equal size */
+/* تأكيد توحيد أبعاد وشكل كروت الخدمات - زيادة حجم الكروت */
 .service-card {
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 525; /* Fixed height for all cards */
-  width: 100%;
-  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  height: 550px; /* زيادة ارتفاع الكرت كما طلبت */
+  display: flex;
+  flex-direction: column;
+}
+  
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 120, 255, 0.25);
 }
 
-/* Keep all images consistently sized */
+/* تكبير الكرت النشط في وضع centerMode */
+.slick-center .service-card {
+  transform: scale(1.08); /* تأثير الزوم للكرت النشط */
+  box-shadow: 0 15px 35px rgba(0, 120, 255, 0.3);
+  z-index: 5;
+}
+
+.slick-center .service-card:hover {
+  transform: scale(1.08) translateY(-5px);
+}
+  
+/* ضبط صور الخدمات لتكون بنفس الحجم مع زيادة الارتفاع */
 .service-img {
   position: relative;
   overflow: hidden;
-  height: 200px; /* Consistent height */
+  height: 250px; /* زيادة ارتفاع الصورة كما طلبت */
+  width: 100%;
 }
-
-/* Center active slide zoom effect */
-.slick-center .service-card {
-  transform: scale(1.1);
-  box-shadow: 0 10px 30px rgba(0, 120, 255, 0.2);
-  z-index: 10;
+  
+.service-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
-
-/* Reset hover when in slider */
-.slick-slide .service-card:hover {
-  transform: translateY(0);
-}
-
-/* Only apply hover effect when not in slider center */
-.slick-center .service-card:hover {
+  
+.service-card:hover .service-img img {
   transform: scale(1.1);
 }
+  
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 119, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+  
+.service-card:hover .service-overlay {
+  opacity: 1;
+}
+  
+.service-details-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #2c7db1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+  
+.service-details-btn:hover {
+  background-color: #2c7db1;
+  color: #fff;
+  transform: scale(1.1);
+}
+  
+/* تعديل محتوى كرت الخدمة */
+.service-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
 
-/* Updated carousel styles with circular buttons */
-.services-slider {
+}
+  
+.service-content h3 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
   position: relative;
-  padding: 0 50px;
-  margin-top: 20px;
+  padding-bottom: 12px;
 }
 
-/* Circular navigation buttons */
+.service-content h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #2c7db1;
+}
+  
+.service-content p {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+  
+/* تحسين قائمة المميزات */
+.service-features {
+  margin-bottom: 20px;
+  flex: 1;
+}
+  
+.service-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+  
+.service-features ul li {
+  flex: 0 0 50%;
+  padding: 5px 0;
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: flex-start;
+}
+  
+.service-features ul li i {
+  color: #2c7db1;
+  margin-left: 8px;
+  margin-top: 3px;
+}
+  
+/* تحسين زر "اقرأ المزيد" */
+.service-btn {
+  display: inline-block;
+  color: #2c7db1;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 8px 0;
+}
+  
+.service-btn i {
+  margin-right: 5px;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+  
+.service-btn:hover {
+  color: #0055b8;
+  text-decoration: none;
+}
+  
+.service-btn:hover i {
+  transform: translateX(-5px);
+}
+  
+/* تحسين زر الموعد */
+.appointment-btn {
+  background-color: #2c7db1;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  padding: 12px 35px;
+  font-weight: 500;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 78, 150, 0.3);
+}
+  
+.appointment-btn i {
+  margin-right: 10px;
+}
+  
+.appointment-btn:hover {
+  background-color: #0055b8;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 120, 255, 0.4);
+}
+
+/* تحسين أزرار التنقل في السلايدر */
 .slick-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #0077ff8c;
+  background: #2c7db1;
   color: #fff;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 16px;
   transition: all 0.3s ease;
-  z-index: 5;
+  z-index: 10;
   cursor: pointer;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .slick-arrow:hover {
   background: #0055b8;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .prev-arrow {
@@ -400,45 +321,111 @@
   right: 0;
 }
 
-/* Responsive styles */
-@media (max-width: 992px) {
-  .slick-center .service-card {
-    transform: scale(1.08);
+/* تحسين نقاط التنقل */
+.slick-dots {
+  bottom: -30px;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #2c7db1;
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #2c7db1;
+}
+
+/* تحسين المسافات والتباعد للشكل العام */
+.services-slider .slick-list {
+  padding: 20px 0;
+  margin: 0 -10px;
+}
+
+.services-slider .slick-track {
+  display: flex;
+  align-items: center;
+}
+
+/* تعديلات استجابية */
+@media (max-width: 1200px) {
+  .service-card {
+    height: 570px;
   }
   
-  .slick-arrow {
-    width: 35px;
-    height: 35px;
+  .slick-center .service-card {
+    transform: scale(1.06);
   }
 }
 
-@media (max-width: 768px) {
-  .services-slider {
-    padding: 0 40px;
+@media (max-width: 992px) {
+  .dental-services {
+    padding: 70px 0;
+  }
+    
+  .section-title h2 {
+    font-size: 36px;
+  }
+    
+  .service-img {
+    height: 230px;
+  }
+  
+  .service-card {
+    height: 550px;
   }
   
   .slick-center .service-card {
     transform: scale(1.05);
   }
+}
   
-  .slick-arrow {
-    width: 32px;
-    height: 32px;
+@media (max-width: 768px) {
+  .service-features ul li {
+    flex: 0 0 100%;
+  }
+    
+  .appointment-btn {
+    width: 80%;
+    max-width: 300px;
+  }
+  
+  .service-card {
+    height: 530px;
+  }
+  
+  .services-slider {
+    padding: 20px 40px;
+  }
+  
+  .slick-center .service-card {
+    transform: scale(1.04);
   }
 }
-
+  
 @media (max-width: 576px) {
+  .section-title h2 {
+    font-size: 32px;
+  }
+  
+  .service-content h3 {
+    font-size: 20px;
+  }
+    
+  .service-content p {
+    font-size: 14px;
+  }
+  
+  .service-card {
+    height: 520px;
+  }
+  
   .services-slider {
-    padding: 0 35px;
+    padding: 20px 35px;
   }
   
   .slick-center .service-card {
     transform: scale(1.03);
-  }
-  
-  .slick-arrow {
-    width: 28px;
-    height: 28px;
-    font-size: 12px;
   }
 }

@@ -10,8 +10,28 @@ body {
 }
 
 .partners-section {
-    padding: 60px 20px;
+    padding: 60px 0;
     margin: 0 auto;
+    background-image: url("../assets/img/bg1.jpg");
+    
+    background-position: center;
+    position: relative;
+}
+
+.partners-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 0;
+}
+
+.partners-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
@@ -45,7 +65,7 @@ body {
 .partners-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    margin-bottom: 40px;
 }
 
 .partner-category {
@@ -62,90 +82,47 @@ body {
     border-bottom: 2px solid #e0e0e0;
 }
 
-/* Changed to bootstrap-like row */
-.partners-grid {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px; /* Negative margin to offset padding */
-    justify-content: center;
-}
-
-/* Bootstrap-like col-md-4 */
-.partner-card {
-    width: 100%; /* Full width on mobile */
-    padding: 0 15px;
-    margin-bottom: 30px;
+/* Bootstrap already handles the grid, so we just style the inner elements */
+.partner-logo-inner {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    height: 180px;
     display: flex;
     flex-direction: column;
-}
-
-/* Card content container */
-.partner-card-inner {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
 }
 
-.partner-card-inner:hover {
+.partner-logo-inner:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.partner-logo {
-    height: 160px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: #f8f9fa;
-}
-
-.partner-logo img {
+.partner-logo-inner img {
     max-width: 100%;
-    max-height: 120px;
+    max-height: 100px;
     object-fit: contain;
-}
-
-.partner-info {
-    padding: 20px;
-    text-align: center;
-}
-
-.partner-info h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #2a6395;
-}
-
-.partner-info p {
-    font-size: 14px;
-    color: #666;
     margin-bottom: 15px;
-    line-height: 1.5;
 }
 
-.partner-services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
+.partner-name {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
     margin-top: 10px;
-}
-
-.service-tag {
-    background-color: #e6f2ff;
-    color: #2a6395;
-    padding: 4px 10px;
-    border-radius: 50px;
-    font-size: 12px;
+    font-weight: 500;
 }
 
 .cta-container {
     text-align: center;
-    margin-top: 60px;
+    margin-top: 20px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .cta-text {
@@ -169,14 +146,8 @@ body {
     background-color: #1c4b76;
 }
 
-/* Tablet and up - always col-md-4 (33.333%) */
-@media (min-width: 768px) {
-    .partner-card {
-        width: 33.333%; /* Always take up 4 columns of 12 */
-        max-width: 33.333%;
-    }
-}
-
+/* Bootstrap already handles most responsive layouts, 
+   but we can add some additional customizations */
 @media (max-width: 767px) {
     .section-title h2 {
         font-size: 28px;
@@ -184,5 +155,9 @@ body {
     
     .section-title p {
         font-size: 16px;
+    }
+    
+    .partner-logo-inner {
+        height: 160px;
     }
 }

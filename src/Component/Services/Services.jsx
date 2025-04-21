@@ -1,9 +1,9 @@
 import React from "react";
 import "../../style/Services.css";
-import ser1 from "../../assets/img/bg.avif"; // Import your images
-import ser2 from "../../assets/img/Dr-Aya-Ibrahim.png"; // Import your images
-import ser3 from "../../assets/img/Dr-Hadear-Elfiky.png"; // Import your images
-import ser4 from "../../assets/img/Dr-Hadear-Elfiky.png"; // Import your images
+import ser1 from "../../assets/img/bg.avif";
+import ser2 from "../../assets/img/Dr-Aya-Ibrahim.png";
+import ser3 from "../../assets/img/Dr-Hadear-Elfiky.png";
+import ser4 from "../../assets/img/Dr-Hadear-Elfiky.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
@@ -67,15 +67,15 @@ export default function Services() {
     </button>
   );
 
-  // Updated slider settings for 4 cards with centerMode
+  // تحديث إعدادات السلايدر مع تفعيل وضع التمركز للحصول على تأثير التكبير
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4, // Show 4 slides
+    slidesToShow: 3,
     slidesToScroll: 1,
-    centerMode: true, // Enable center mode for zoom effect
-    centerPadding: '0', // No padding to keep cards aligned
+    centerMode: true, // تفعيل وضع التمركز لتكبير الكرت النشط
+    centerPadding: "0", // بدون padding إضافي
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
@@ -84,62 +84,28 @@ export default function Services() {
         settings: {
           slidesToShow: 3,
           centerMode: true,
-        }
+        },
       },
       {
         breakpoint: 992,
         settings: {
           slidesToShow: 2,
-          centerMode: false, // Disable center mode on medium screens
-        }
+          centerMode: true,
+        },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          centerMode: true, // Re-enable center mode on mobile
-        }
-      }
-    ]
-  };
-
-  // Non-slider version with col-md-3 for reference
-  const renderGridCards = () => {
-    return services.map((service) => (
-      <div className="col-md-3 col-sm-6 mb-4" key={service.id}>
-        <div className="service-card">
-          <div className="service-img">
-            <img src={service.image} alt={service.title} />
-            <div className="service-overlay">
-              <a href="#" className="service-details-btn">
-                <i className="fas fa-plus"></i>
-              </a>
-            </div>
-          </div>
-          <div className="service-content">
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
-            <div className="service-features">
-              <ul>
-                {service.features.map((feature, index) => (
-                  <li key={index}>
-                    <i className="fas fa-check"></i> {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <a href="#" className="service-btn">
-              اقرأ المزيد <i className="fas fa-arrow-left"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    ));
+          centerMode: true,
+        },
+      },
+    ],
   };
 
   return (
     <>
-      <section className="dental-services section-gap bg-light">
+      <section className="dental-services bg-light">
         <div className="overlay"></div>
         <div className="container">
           <div className="row">
@@ -153,48 +119,49 @@ export default function Services() {
             </div>
           </div>
 
-          {/* Slider version with centerMode for zoom effect */}
+          {/* سلايدر الخدمات المُحدث */}
           <div className="row">
             <div className="col-12">
-              <Slider {...settings} className="services-slider">
-                {services.map((service) => (
-                  <div key={service.id}>
-                    <div className="px-2">
-                      <div className="service-card">
-                        <div className="service-img">
-                          <img src={service.image} alt={service.title} />
-                          <div className="service-overlay">
-                            <a href="#" className="service-details-btn">
-                              <i className="fas fa-plus"></i>
+              <div className="services-slider-container">
+                <Slider {...settings} className="services-slider">
+                  {services.map((service) => (
+                    <div key={service.id} className="service-slide">
+                      <div className="service-card-wrapper">
+                        <div className="service-card">
+                          <div className="service-img">
+                            <img src={service.image} alt={service.title} />
+                            <div className="service-overlay">
+                              <a href="#" className="service-details-btn">
+                                <i className="fas fa-plus"></i>
+                              </a>
+                            </div>
+                          </div>
+                          <div className="service-content">
+                            <h3>{service.title}</h3>
+                            <p>{service.description}</p>
+                            <div className="service-features">
+                              <ul>
+                                {service.features.map((feature, index) => (
+                                  <li key={index}>
+                                    <i className="fas fa-check"></i> {feature}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            <a href="#" className="service-btn">
+                              اقرأ المزيد <i className="fas fa-arrow-left"></i>
                             </a>
                           </div>
                         </div>
-                        <div className="service-content">
-                          <h3>{service.title}</h3>
-                          <p>{service.description}</p>
-                          <div className="service-features">
-                            <ul>
-                              {service.features.map((feature, index) => (
-                                <li key={index}>
-                                  <i className="fas fa-check"></i> {feature}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          <a href="#" className="service-btn">
-                            اقرأ المزيد <i className="fas fa-arrow-left"></i>
-                          </a>
-                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </Slider>
+                  ))}
+                </Slider>
+              </div>
             </div>
           </div>
 
-          {/* Keep your existing appointment button section */}
-          <div className="row mt-4">
+          <div className="row mt-5">
             <div className="col-12 text-center">
               <button className="appointment-btn">
                 احجز موعدًا الآن <i className="far fa-calendar-alt"></i>

@@ -1,9 +1,10 @@
 import React from 'react'
+import '../../style/Footer.css'
 
 export default function Footer() {
     return (
         <>
-            <footer class="bg-dark text-light pt-4">
+            <footer class="text-light pt-4">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
@@ -16,18 +17,18 @@ export default function Footer() {
                         <div class="col-md-4">
                             <h5>فروعنا</h5>
                             <ul class="list-unstyled">
-                                <li><i class="fas fa-map-marker-alt"></i> الفرع الرئيسي: القاهرة - مصر</li>
-                                <li><i class="fas fa-map-marker-alt"></i> فرع الإسكندرية</li>
-                                <li><i class="fas fa-map-marker-alt"></i> فرع الجيزة</li>
+                                <li><i class="fas fa-map-marker-alt"></i> الفرع الرئيسي: قويسنا - المنوفية </li>
+                                <li><i class="fas fa-map-marker-alt"></i> فرع طه شبرا -قويسنا -المنوفية </li>
+                                <li><i class="fas fa-map-marker-alt"></i> قريبا:  شبين الكوم - المنوفية </li>
                             </ul>
                         </div>
 
                         <div class="col-md-4">
                             <h5>تابعنا على</h5>
-                            <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#" class="text-light "><i class="fab fa-facebook fa-2x"></i></a>
                             <a href="#" class="text-light me-3"><i class="fab fa-instagram fa-2x"></i></a>
                             <a href="#" class="text-light me-3"><i class="fab fa-twitter fa-2x"></i></a>
-                            <a href="#" class="text-light"><i class="fab fa-whatsapp fa-2x"></i></a>
+                            <a href="#" class="text-light me-3"><i class="fab fa-whatsapp fa-2x"></i></a>
                         </div>
                     </div>
 

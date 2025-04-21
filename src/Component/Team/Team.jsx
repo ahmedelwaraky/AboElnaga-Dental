@@ -32,46 +32,35 @@ export default function Team() {
   const trackRef = useRef(null);
 
   useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    const calculateCarouselWidth = () => {
-      const cardWidth = 250 + 30; // width + margin
-      return cardWidth * doctorsData.length;
-    };
-
-    const updateScrollDistance = () => {
-      const scrollWidth = calculateCarouselWidth();
-      document.documentElement.style.setProperty('--scroll-width', `${scrollWidth}px`);
-    };
-
-    window.addEventListener("resize", updateScrollDistance);
-    updateScrollDistance(); // Initial call
-
-    return () => {
-      window.removeEventListener("resize", updateScrollDistance);
-    };
+    // حساب عرض العنصر الواحد (البطاقة + الهامش)
+    const singleCardWidth = 250 + 30; // عرض البطاقة + الهوامش
+    const cardsCount = doctorsData.length;
+    const carouselWidth = singleCardWidth * cardsCount;
+    
+    // تعيين المتغيرات على مستوى CSS
+    document.documentElement.style.setProperty('--single-card-width', `${singleCardWidth}px`);
+    document.documentElement.style.setProperty('--cards-count', `${cardsCount}`);
+    document.documentElement.style.setProperty('--carousel-width', `${carouselWidth}px`);
+    
+    // ضبط مدة الحركة بناءً على عدد البطاقات
+    const animationDuration = cardsCount * 2; // 2 ثانية لكل بطاقة
+    document.documentElement.style.setProperty('--animation-duration', `${animationDuration}s`);
   }, []);
 
-  const renderDoctorCards = () => {
-    const allCards = [];
-    for (let i = 0; i < 2; i++) {
-      doctorsData.forEach((doctor) => {
-        allCards.push(
-          <div className="doctor-card" key={`doctor-${doctor.id}-repeat-${i}`}>
-            <div className="doctor-img-container">
-              <div className="img-spinner"></div>
-              <img src={doctor.image} alt={doctor.name} className="doctor-img" />
-            </div>
-            <div className="doctor-info">
-              <h3 className="doctor-name">{doctor.name}</h3>
-              <p className="doctor-specialty">{doctor.specialty}</p>
-            </div>
-          </div>
-        );
-      });
-    }
-    return allCards;
+  // كل مجموعة من البطاقات
+  const renderDoctorSet = (keyPrefix) => {
+    return doctorsData.map((doctor, index) => (
+      <div className="doctor-card" key={`${keyPrefix}-${doctor.id}`}>
+        <div className="doctor-img-container">
+          <div className="img-spinner"></div>
+          <img src={doctor.image} alt={doctor.name} className="doctor-img" />
+        </div>
+        <div className="doctor-info">
+          <h3 className="doctor-name">{doctor.name}</h3>
+          <p className="doctor-specialty">{doctor.specialty}</p>
+        </div>
+      </div>
+    ));
   };
 
   return (
@@ -84,8 +73,18 @@ export default function Team() {
 
       <div className="carousel-container">
         <div className="carousel-track" ref={trackRef}>
-          {renderDoctorCards()}
+          {/* المجموعة الأولى من البطاقات */}
+          {renderDoctorSet('set1')}
+          {/* المجموعة الثانية من البطاقات */}
+          {renderDoctorSet('set2')}
+          {/* المجموعة الثالثة من البطاقات (للتأكد من عدم وجود فجوات) */}
+          {renderDoctorSet('set3')}
         </div>
+      </div>
+      
+      {/* زر الانضمام إلى الفريق */}
+      <div className="join-team-button-container">
+        <button className="join-team-button">انضم إلى فريقنا</button>
       </div>
     </section>
   );

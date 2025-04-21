@@ -10,6 +10,8 @@ import Services from "./Component/Services/Services";
 import Team from "./Component/Team/Team";
 import DoctorsCarousel from "./Component/DoctorsCarousel/DoctorsCarousel";
 import Partners from "./Component/Partners/Partners";
+import Branches from "./Component/Branches/Branches";
+import Opinions from "./Component/Opinions/Opinions";
 
 
 function App() {

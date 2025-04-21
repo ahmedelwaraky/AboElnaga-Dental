@@ -68,10 +68,10 @@ export default function Hero() {
                   <div className="info-badge">{slides[activeIndex].info}</div>
                   
                   <div className="hero-buttons">
-                    <button className="btn appointment-btn">
+                    <button className="btn appointment-btn text-white">
                       <FaCalendarAlt /> احجز موعدًا الآن
                     </button>
-                    <button className="btn contact-btn">
+                    <button className="btn contact-btn text-white">
                       <FaPhoneAlt /> اتصل بنا
                     </button>
                   </div>
