@@ -133,7 +133,7 @@
   box-shadow: 0 5px 15px rgba(74, 163, 223, 0.4);
 }
 
-.show {
+.opinion-btn {
   background-color: #4aa3df !important;
   color: #fff !important;
   padding: 10px 30px;
@@ -146,7 +146,7 @@
   text-decoration: none;
 }
 
-.show:hover {
+.opinion-btn:hover {
   background-color: #3896d3 !important;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(74, 163, 223, 0.4);

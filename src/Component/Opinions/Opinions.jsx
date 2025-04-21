@@ -69,7 +69,7 @@ export default function Opinions() {
           </div>
 
           <div className="text-center mt-4">
-            <a href="#" className="btn show">عرض المزيد من الآراء</a>
+            <a href="#" className="btn opinion-btn">عرض المزيد من الآراء</a>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ body {
 
 .team-section {
   position: relative;
-  padding: 60px 20px;
+  padding: 60px 0;
   margin: 0 auto;
   text-align: center;
   direction: rtl;
@@ -86,7 +86,7 @@ body {
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 60px 0;
+  padding: 40px 0;
   display: flex;
   justify-content: center;
 }
@@ -106,9 +106,7 @@ body {
   animation: perfectScroll var(--animation-duration) linear infinite;
 }
 
-.carousel-container:hover .carousel-track {
-  animation-play-state: paused;
-}
+/* Removed the hover pause effect to keep the carousel rotating */
 
 .doctor-card {
   min-width: 250px;
@@ -238,7 +236,6 @@ body {
     --single-card-width: 200px; /* عرض البطاقة + الهوامش للشاشات الصغيرة */
   }
 }
-
 
 /* أنماط زر الانضمام إلى الفريق */
 .join-team-button-container {
