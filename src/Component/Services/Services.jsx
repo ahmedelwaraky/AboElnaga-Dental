@@ -1,9 +1,9 @@
 import React from "react";
 import "../../style/Services.css";
-import ser1 from "../../assets/img/bg.avif";
-import ser2 from "../../assets/img/Dr-Aya-Ibrahim.png";
-import ser3 from "../../assets/img/Dr-Hadear-Elfiky.png";
-import ser4 from "../../assets/img/Dr-Hadear-Elfiky.png";
+import ser1 from "../../assets/img/طقم.webp";
+import ser2 from "../../assets/img/حشو.png";
+import ser3 from "../../assets/img/تقويم.webp";
+import ser4 from "../../assets/img/اطفال.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
@@ -14,7 +14,7 @@ export default function Services() {
     {
       id: 1,
       title: "حشو وتنظيف الأسنان",
-      image: ser1,
+      image: ser2,
       description:
         "نقدم خدمات حشو الأسنان عالية الجودة باستخدام أحدث المواد والتقنيات. كما نوفر خدمات تنظيف احترافية لإزالة الجير والبلاك للحفاظ على صحة أسنانك ولثتك.",
       features: ["حشو تجميلي", "تنظيف عميق", "إزالة الجير", "تلميع الأسنان"],
@@ -22,7 +22,7 @@ export default function Services() {
     {
       id: 2,
       title: "زراعة وتركيب أطقم الأسنان",
-      image: ser2,
+      image: ser1,
       description:
         "نتخصص في زراعة الأسنان بأحدث التقنيات العالمية مع ضمان نتائج مذهلة. كما نقدم خدمات تركيب أطقم الأسنان الثابتة والمتحركة المصممة خصيصًا لكل مريض.",
       features: [

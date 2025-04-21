@@ -15,15 +15,15 @@ import Doc10 from "../../assets/img/Dr-Aya-Ibrahim.png";
 import Doc11 from "../../assets/img/Dr-A-Galal.png";
 
 const doctorsData = [
-  { id: 1, name: "د. أحمد حسن", specialty: "أمراض القلب", image: Doc1 },
-  { id: 2, name: "د. سارة علي", specialty: "أمراض المخ والأعصاب", image: Doc2 },
-  { id: 3, name: "د. محمد كمال", specialty: "جراحة العظام", image: Doc3 },
-  { id: 4, name: "د. ليلى عمر", specialty: "طب الأطفال", image: Doc4 },
-  { id: 5, name: "د. هاني فريد", specialty: "الأمراض الجلدية", image: Doc5 },
-  { id: 6, name: "د. نور محمود", specialty: "طب العيون", image: Doc6 },
-  { id: 7, name: "د. طارق سمير", specialty: "الطب النفسي", image: Doc7 },
-  { id: 8, name: "د. أميرة صالح", specialty: "أمراض النساء والتوليد", image: Doc8 },
-  { id: 9, name: "د. يوسف أسامة", specialty: "جراحة المسالك البولية", image: Doc9 },
+  { id: 1, name: "د. أفنان حازم", specialty: "أمراض القلب", image: Doc1 },
+  { id: 2, name: "د.  هدير الفقي", specialty: "أمراض المخ والأعصاب", image: Doc2 },
+  { id: 3, name: "د.  مريم ناجي", specialty: "جراحة العظام", image: Doc3 },
+  { id: 4, name: "د.محمد عباس", specialty: "طب الأطفال", image: Doc4 },
+  { id: 5, name: "د.محمد صلاح", specialty: "الأمراض الجلدية", image: Doc5 },
+  { id: 6, name: "د.ندي فرحات", specialty: "طب العيون", image: Doc6 },
+  { id: 7, name: "د. عمر سمير", specialty: "الطب النفسي", image: Doc7 },
+  { id: 8, name: "د. وفاء قاسم ", specialty: "أمراض النساء والتوليد", image: Doc8 },
+  { id: 9, name: "د.  يوسف أسامة ", specialty: "جراحة المسالك البولية", image: Doc9 },
   { id: 10, name: "د. آية إبراهيم", specialty: "طب الأسنان", image: Doc10 },
   { id: 11, name: "د. أحمد جلال", specialty: "أمراض الباطنة", image: Doc11 },
 ];
