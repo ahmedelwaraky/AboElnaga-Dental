@@ -5,7 +5,7 @@
   --single-card-width: 280px;
   --cards-count: 11;
   --carousel-width: 3080px;
-  --animation-duration: 22s;
+  --animation-duration: 60s !important;
 }
 
 * {
@@ -89,6 +89,11 @@ body {
   padding: 40px 0;
   display: flex;
   justify-content: center;
+  cursor: grab; /* يظهر مؤشر القبضة عند التحرك فوق المنطقة */
+}
+
+.carousel-container:active {
+  cursor: grabbing; /* يظهر مؤشر القبض عند الضغط والسحب */
 }
 
 /* الجزء المهم: حاوية العناصر */
@@ -101,12 +106,16 @@ body {
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
+  touch-action: pan-x; /* تحسين التفاعل على الأجهزة اللمسية */
   
   /* الرسوم المتحركة: الأساس لمنع الفراغات */
   animation: perfectScroll var(--animation-duration) linear infinite;
 }
 
-/* Removed the hover pause effect to keep the carousel rotating */
+/* حالة الإيقاف - تستخدم مع فئة JS */
+.carousel-track.paused {
+  animation-play-state: paused;
+}
 
 .doctor-card {
   min-width: 250px;
@@ -142,7 +151,7 @@ body {
   height: calc(100% + 20px);
   border-radius: 50%;
   border: 3px dotted var(--primary-color);
-  animation: spin 8s linear infinite;
+  animation: spin 360s linear infinite !important;
   z-index: 0;
 }
 
@@ -179,9 +188,36 @@ body {
     transform: translateX(0);
   }
   100% {
-    /* نتحرك بالضبط بمقدار عرض مجموعة واحدة من البطاقات */
     transform: translateX(calc(-1 * var(--carousel-width)));
   }
+}
+
+/* أزرار التحكم في الشرائح - إن أردت إضافتها */
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.carousel-control {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.carousel-control:hover {
+  background-color: #245f88;
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 768px) {
@@ -204,7 +240,7 @@ body {
   }
   
   :root {
-    --single-card-width: 220px; /* عرض البطاقة + الهوامش للشاشات المتوسطة */
+    --single-card-width: 220px; 
   }
 }
 

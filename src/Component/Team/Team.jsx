@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../../style/Team.css";
 
 // Images
@@ -28,8 +28,15 @@ const doctorsData = [
   { id: 11, name: "د. أحمد جلال", specialty: "أمراض الباطنة", image: Doc11 },
 ];
 
+
 export default function Team() {
   const trackRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const animationRef = useRef(null);
+  const pauseTimeoutRef = useRef(null);
 
   useEffect(() => {
     // حساب عرض العنصر الواحد (البطاقة + الهامش)
@@ -45,7 +52,91 @@ export default function Team() {
     // ضبط مدة الحركة بناءً على عدد البطاقات
     const animationDuration = cardsCount * 2; // 2 ثانية لكل بطاقة
     document.documentElement.style.setProperty('--animation-duration', `${animationDuration}s`);
+
+    return () => {
+      if (pauseTimeoutRef.current) {
+        clearTimeout(pauseTimeoutRef.current);
+      }
+    };
   }, []);
+
+  // وظيفة إيقاف الدوران
+  const pauseCarousel = () => {
+    if (trackRef.current) {
+      const computedStyle = window.getComputedStyle(trackRef.current);
+      const matrix = new DOMMatrixReadOnly(computedStyle.transform);
+      
+      // حفظ موضع التوقف الحالي
+      trackRef.current.style.transform = `translateX(${matrix.m41}px)`;
+      trackRef.current.style.animationPlayState = 'paused';
+      trackRef.current.style.animation = 'none';
+      setIsPaused(true);
+    }
+  };
+
+  // وظيفة استئناف الدوران
+  const resumeCarousel = () => {
+    if (trackRef.current && isPaused) {
+      // إعادة تعيين الحركة
+      trackRef.current.style.transform = '';
+      trackRef.current.style.animation = 'perfectScroll var(--animation-duration) linear infinite';
+      trackRef.current.style.animationPlayState = 'running';
+      setIsPaused(false);
+    }
+  };
+
+  // معالجات السحب بالماوس
+  const handleMouseDown = (e) => {
+    if (!isPaused) {
+      pauseCarousel();
+    }
+    
+    setIsDragging(true);
+    setStartX(e.pageX - trackRef.current.offsetLeft);
+    setScrollLeft(trackRef.current.offsetLeft);
+    
+    // إلغاء المؤقت السابق إن وجد
+    if (pauseTimeoutRef.current) {
+      clearTimeout(pauseTimeoutRef.current);
+    }
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    
+    const x = e.pageX - trackRef.current.offsetLeft;
+    const distance = x - startX;
+    
+    // تحريك العنصر بناءً على مسافة السحب
+    if (trackRef.current) {
+      const currentTransform = window.getComputedStyle(trackRef.current).transform;
+      const matrix = new DOMMatrixReadOnly(currentTransform);
+      const currentX = matrix.m41;
+      
+      trackRef.current.style.transform = `translateX(${currentX + distance}px)`;
+      setStartX(x);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    
+    // إعادة تشغيل الدوران بعد فترة من الوقت
+    pauseTimeoutRef.current = setTimeout(() => {
+      resumeCarousel();
+    }, 3000); // إعادة التشغيل بعد 3 ثواني
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging) {
+      setIsDragging(false);
+      
+      // إعادة تشغيل الدوران بعد فترة من الوقت
+      pauseTimeoutRef.current = setTimeout(() => {
+        resumeCarousel();
+      }, 3000); // إعادة التشغيل بعد 3 ثواني
+    }
+  };
 
   // كل مجموعة من البطاقات
   const renderDoctorSet = (keyPrefix) => {
@@ -72,7 +163,14 @@ export default function Team() {
       </div>
 
       <div className="carousel-container">
-        <div className="carousel-track" ref={trackRef}>
+        <div 
+          className={`carousel-track ${isPaused ? 'paused' : ''}`} 
+          ref={trackRef}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+        >
           {/* المجموعة الأولى من البطاقات */}
           {renderDoctorSet('set1')}
           {/* المجموعة الثانية من البطاقات */}
