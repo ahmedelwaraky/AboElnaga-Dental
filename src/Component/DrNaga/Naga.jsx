@@ -1,8 +1,13 @@
 import React from "react";
 import "../../style/Naga.css";
 import MainPhoto from "../../assets/img/DR-AHMED.png";
+import { FaVideo } from "react-icons/fa";
 
 export default function Naga() {
+  const now = new Date();
+  const day = now.getDay(); // 1 = Monday
+  const isMonday = day === 1;
+
   return (
     <>
       <section className="section-two about-us pt-5 bg-light">
@@ -68,31 +73,29 @@ export default function Naga() {
                 <div className="profile-about">
                   <div className="row">
                     <div className="col-md-6 w-100">
-             
-                        <li className="my-2">
-                          <span className="cv">المؤهلات العلمية:</span>{" "}
-                          بكالوريوس طب وجراحة الفم والأسنان (2013)
-                        </li>
-                        <li className="my-2">
-                          <span className="cv">سنوات الخبرة:</span> +10 سنوات
-                        </li>
-                        <li className="my-2">
-                          <span className="cv">المواعيد:</span> السبت إلى
-                          الخميس، 10 ص - 8 م
-                        </li>
-                        <li className="my-2">
-                          <span className="cv">التخصص الدقيق:</span> علاج جذور
-                          وتركيبات تجميلية
-                        </li>
-                        <li className="my-2">
-                          <span className="cv">العنوان:</span> مركز النجا لطب
-                          الأسنان، شارع الملك فيصل
-                        </li>
-                        <li className="my-2">
-                          <span className="cv">البريد الإلكتروني:</span>{" "}
-                          dr.ahmed@naga-dental.com
-                        </li>
-                  
+                      <li className="my-2">
+                        <span className="cv">المؤهلات العلمية:</span> بكالوريوس
+                        طب وجراحة الفم والأسنان (2013)
+                      </li>
+                      <li className="my-2">
+                        <span className="cv">سنوات الخبرة:</span> +10 سنوات
+                      </li>
+                      <li className="my-2">
+                        <span className="cv">المواعيد:</span> السبت إلى الخميس،
+                        11 ص - 11 م
+                      </li>
+                      <li className="my-2">
+                        <span className="cv">التخصص الدقيق:</span> علاج جذور
+                        وتركيبات تجميلية
+                      </li>
+                      <li className="my-2">
+                        <span className="cv">العنوان:</span> مركز النجا لطب
+                        الأسنان، شارع الملك فيصل
+                      </li>
+                      <li className="my-2">
+                        <span className="cv">البريد الإلكتروني:</span>{" "}
+                        dr.ahmed@naga-dental.com
+                      </li>
                     </div>
                     <div className="col-md-6"></div>
                   </div>
@@ -101,12 +104,20 @@ export default function Naga() {
                 </div>
 
                 <div className="btn-group">
-                  <button className="appointment-btn">
+                  <a
+                    href="https://wa.me/+201227599182"
+                    className="appointment-btn"
+                    target="_blank"
+                  >
                     حجز موعد <i className="far fa-calendar-alt"></i>
-                  </button>
-                  <button className="contact-btn">
-                    استشارة عبر الإنترنت <i className="fas fa-video"></i>
-                  </button>
+                  </a>
+                  <a
+                    href={isMonday ? "/consultation" : "#"} // رابط يعمل فقط يوم الاثنين
+                    className={`contact-btn ${!isMonday ? "disabled" : ""}`}
+                    aria-disabled={!isMonday} // يساعد في الوصول للمستخدمين ذوي الإعاقة
+                  >
+                    استشارة عبر الإنترنت <FaVideo />
+                  </a>
                 </div>
               </div>
             </div>

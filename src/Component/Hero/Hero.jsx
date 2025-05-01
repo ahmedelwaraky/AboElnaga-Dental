@@ -143,15 +143,23 @@ export default function Hero() {
 
           <div className="hero-buttons">
             <>
-              <a href="https://wa.me/+201115637264" className="hero-btn primary-btn" target="_blank">
+              <a
+                href="https://wa.me/+201227599182"
+                className="hero-btn primary-btn"
+                target="_blank"
+              >
                 <FaCalendarAlt />
                 احجز موعدًا الآن
               </a>
 
-              <a href="tel:+1234567890" className="hero-btn secondary-btn" target="_blank">
-                {/* Replace with your phone number */}
+              <a href="tel:+201227599182" className="hero-btn secondary-btn">
                 <FaPhoneAlt />
-                اتصل بنا
+                عيادة قويسنا{" "}
+              </a>
+
+              <a href="tel:+201040467770" className="hero-btn secondary-btn">
+                <FaPhoneAlt />
+                عيادة طة شبرا{" "}
               </a>
             </>
           </div>

@@ -150,7 +150,7 @@
   margin: 25px 0;
 }
 
-.section-two .info button {
+.section-two .info a {
   background-color: #2c7db1;
   color: #fff;
   border-color: transparent;
@@ -167,20 +167,21 @@
   justify-content: center;
 }
 
-.section-two .info button i {
+.section-two .info a i {
   margin-right: 8px;
 }
 
-.section-two .info button.appointment-btn {
+.section-two .info .appointment-btn {
   background-color: #2c7db1;
 }
 
-.section-two .info button.contact-btn {
+.section-two .info .contact-btn {
   background-color: #fff;
   color: #2c7db1;
 }
 
-.section-two .info button:hover {
+.section-two .info a:hover
+ {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(44, 125, 177, 0.3);
 }
@@ -233,4 +234,11 @@
     margin-bottom: 10px;
     width: 100%;
   }
+}
+
+
+.disabled {
+  pointer-events: none; /* تعطيل التفاعل مع الرابط */
+  opacity: 0.5;          /* تقليل الشفافية لإظهار أنه غير نشط */
+  cursor: not-allowed;   /* تغيير المؤشر ليظهر أنه غير قابل للنقر */
 }

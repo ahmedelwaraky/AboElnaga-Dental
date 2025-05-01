@@ -5,15 +5,16 @@ import Naga from "../DrNaga/Naga";
 import Services from "../Services/Services";
 import Team from "../Team/Team";
 import Partners from "../Partners/Partners";
-import "../../style/Home.css"; // Make sure you create this file
 import Branches from "../Branches/Branches";
 import Footer from "../Footer/Footer";
-import Opinions from "../Opinions/Opinions";
+import Opinions from "../Opinions/Opinions"; 
+import "../../style/Home.css";
+import WhatsIcon from "../WhatsIcon/WhatsIcon";
 
 export default function Home() {
   return (
     <div className="home">
-      <Navbar /> {/* Move Navbar outside the hero section */}
+      <Navbar />
       <div id="hero" className="hero section">
         <Hero />
       </div>
@@ -38,6 +39,8 @@ export default function Home() {
       <div id="contact-us" className="contact-us-section section">
         <Footer />
       </div>
+      
+      <WhatsIcon phoneNumber="201227599182"  />
     </div>
   );
 }

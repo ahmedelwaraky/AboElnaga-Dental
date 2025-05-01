@@ -181,9 +181,9 @@ export default function Team() {
       </div>
       
       {/* زر الانضمام إلى الفريق */}
-      <div className="join-team-button-container">
+      {/* <div className="join-team-button-container">
         <button className="join-team-button">انضم إلى فريقنا</button>
-      </div>
+      </div> */}
     </section>
   );
 }

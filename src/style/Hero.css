@@ -17,8 +17,12 @@
   overflow: hidden;
   background-color: #000;
   direction: rtl;
+  text-decoration: none;
 }
+a{
+  text-decoration: none !important;
 
+}
 /* Background Animation */
 @keyframes kenburns {
   0% {
