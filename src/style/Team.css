@@ -1,11 +1,13 @@
 :root {
   --primary-color: #2c7db1;
+  --primary-dark: #245f88;
   --white: #ffffff;
   --black: #000000;
   --single-card-width: 280px;
   --cards-count: 11;
   --carousel-width: 3080px;
   --animation-duration: 60s !important;
+  --transition-speed: 0.3s;
 }
 
 * {
@@ -58,6 +60,7 @@ body {
   left: 0;
   z-index: 2;
 }
+
 .section-heading {
   margin-bottom: 50px;
 }
@@ -79,7 +82,7 @@ body {
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background-color: #2c7db1;
+  background-color: var(--primary-color);
 }
 
 .carousel-container {
@@ -89,40 +92,55 @@ body {
   padding: 40px 0;
   display: flex;
   justify-content: center;
-  cursor: grab; /* يظهر مؤشر القبضة عند التحرك فوق المنطقة */
+  cursor: grab; /* Show grab cursor on hover */
+  touch-action: pan-x; /* Improve touch interaction */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .carousel-container:active {
-  cursor: grabbing; /* يظهر مؤشر القبض عند الضغط والسحب */
+  cursor: grabbing; /* Show grabbing cursor when active */
 }
 
-/* الجزء المهم: حاوية العناصر */
+/* Important: track container */
 .carousel-track {
   display: flex;
-  /* للتأكد من عرض العناصر دون تكديس */
   white-space: nowrap;
-  /* تحسينات أداء الرسومات */
+  /* Graphics performance optimizations */
   will-change: transform;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
-  touch-action: pan-x; /* تحسين التفاعل على الأجهزة اللمسية */
+  touch-action: pan-x;
   
-  /* الرسوم المتحركة: الأساس لمنع الفراغات */
+  /* Animation: basis for preventing gaps */
   animation: perfectScroll var(--animation-duration) linear infinite;
 }
 
-/* حالة الإيقاف - تستخدم مع فئة JS */
+/* Paused state - used with JS class */
 .carousel-track.paused {
   animation-play-state: paused;
 }
 
 .doctor-card {
-  min-width: 250px;
-  flex: 0 0 250px;
+  min-width: var(--single-card-width);
+  flex: 0 0 var(--single-card-width);
   margin: 0 15px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all var(--transition-speed) ease;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Active doctor card state */
+.doctor-card.active {
+  transform: scale(1.05);
+  background-color: rgba(44, 125, 177, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
 }
 
 .doctor-img-container {
@@ -131,6 +149,11 @@ body {
   margin: 0 auto 20px;
   position: relative;
   overflow: visible;
+  transition: all var(--transition-speed) ease;
+}
+
+.doctor-card.active .doctor-img-container {
+  transform: scale(1.02);
 }
 
 .doctor-img {
@@ -141,6 +164,11 @@ body {
   border: 5px solid var(--primary-color);
   position: relative;
   z-index: 1;
+  transition: all var(--transition-speed) ease;
+}
+
+.doctor-card:hover .doctor-img {
+  border-color: var(--primary-dark);
 }
 
 .img-spinner {
@@ -151,13 +179,25 @@ body {
   height: calc(100% + 20px);
   border-radius: 50%;
   border: 3px dotted var(--primary-color);
-  animation: spin 360s linear infinite !important;
+  animation: spin 60s linear infinite;
   z-index: 0;
+  transition: all var(--transition-speed) ease;
+}
+
+.doctor-card.active .img-spinner {
+  animation-duration: 30s; /* Faster spin for active card */
+  border-width: 4px;
+  border-color: var(--primary-dark);
+}
+
+.doctor-card:hover .img-spinner {
+  animation-duration: 40s; /* Faster spin on hover */
 }
 
 .doctor-info {
   padding: 15px;
   color: var(--primary-color);
+  transition: all var(--transition-speed) ease;
 }
 
 .doctor-name {
@@ -165,12 +205,23 @@ body {
   font-weight: bold;
   margin-bottom: 5px;
   color: var(--primary-color);
+  transition: all var(--transition-speed) ease;
+}
+
+.doctor-card.active .doctor-name {
+  color: var(--primary-dark);
+  font-size: 22px;
 }
 
 .doctor-specialty {
   font-size: 16px;
   color: var(--primary-color);
   margin-bottom: 10px;
+  transition: all var(--transition-speed) ease;
+}
+
+.doctor-card.active .doctor-specialty {
+  font-weight: bold;
 }
 
 @keyframes spin {
@@ -182,7 +233,7 @@ body {
   }
 }
 
-/* المفتاح لمنع الفراغات - حركة مستمرة تمامًا */
+/* Key for preventing gaps - continuous movement */
 @keyframes perfectScroll {
   0% {
     transform: translateX(0);
@@ -192,12 +243,13 @@ body {
   }
 }
 
-/* أزرار التحكم في الشرائح - إن أردت إضافتها */
+/* Carousel control buttons */
 .carousel-controls {
   display: flex;
   justify-content: center;
   gap: 15px;
   margin-top: 30px;
+  padding-bottom: 30px;
 }
 
 .carousel-control {
@@ -212,12 +264,35 @@ body {
   justify-content: center;
   cursor: pointer;
   font-size: 18px;
-  transition: all 0.3s ease;
+  transition: all var(--transition-speed) ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-control:hover {
-  background-color: #245f88;
+  background-color: var(--primary-dark);
   transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-control:active {
+  transform: scale(0.95);
+}
+
+/* Touch-specific optimizations */
+@media (pointer: coarse) {
+  .carousel-container {
+    cursor: default;
+  }
+  
+  .doctor-card {
+    padding: 5px;
+  }
+  
+  .carousel-control {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -241,6 +316,10 @@ body {
   
   :root {
     --single-card-width: 220px; 
+  }
+  
+  .carousel-controls {
+    margin-top: 20px;
   }
 }
 
@@ -269,37 +348,10 @@ body {
   }
   
   :root {
-    --single-card-width: 200px; /* عرض البطاقة + الهوامش للشاشات الصغيرة */
+    --single-card-width: 200px;
   }
-}
-
-/* أنماط زر الانضمام إلى الفريق */
-.join-team-button-container {
-  text-align: center;
-  margin-top: 40px;
-  padding-bottom: 30px;
-}
-
-.join-team-button {
-  background-color: #2c7db1; /* يمكنك تغيير اللون ليتناسب مع ألوان موقعك */
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.join-team-button:hover {
-  background-color: #2c7db1;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.join-team-button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  .doctor-card.active {
+    transform: scale(1.03);
+  }
 }

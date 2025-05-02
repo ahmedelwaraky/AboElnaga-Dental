@@ -41,7 +41,6 @@ export default function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav m-auto mb-lg-0">
-
               <li className="nav-item">
                 {isHomePage ? (
                   <a
@@ -147,7 +146,6 @@ export default function Navbar() {
                 )}
               </li>
 
-
               <li className="nav-item">
                 {isHomePage ? (
                   <a
@@ -168,7 +166,7 @@ export default function Navbar() {
                   </Link>
                 )}
               </li>
-              
+
               <li className="nav-item">
                 {isHomePage ? (
                   <a
@@ -181,11 +179,11 @@ export default function Navbar() {
                       scrollToSection("opinions");
                     }}
                   >
-                   الأراء
-                    </a>
+                    الأراء
+                  </a>
                 ) : (
                   <Link className="nav-link" to="/#opinions">
-                   الأراء
+                    الأراء
                   </Link>
                 )}
               </li>
@@ -202,28 +200,39 @@ export default function Navbar() {
                       scrollToSection("contact-us");
                     }}
                   >
-                   تواصل معنا
-                    </a>
+                    تواصل معنا
+                  </a>
                 ) : (
                   <Link className="nav-link" to="/#contact-us">
-                   تواصل معنا
+                    تواصل معنا
                   </Link>
                 )}
               </li>
-         
             </ul>
             <div className="social-icons">
-              <a href="#" className="social-link">
+              <a
+                href="https://www.facebook.com/AboelnagaDC"
+                className="social-link"
+                target="_blank"
+              >
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" className="social-link">
+              <a href="#" className="social-link" target="_blank">
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="#" className="social-link">
+              <a
+                href="https://www.instagram.com/aboelnagadc/"
+                className="social-link"
+                target="_blank"
+              >
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#" className="social-link">
-                <i className="fab fa-linkedin-in"></i>
+              <a
+                href="https://wa.me/+201227599182"
+                class="social-link"
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp"></i>
               </a>
             </div>
           </div>

@@ -10,17 +10,17 @@ export default function Footer() {
                         <div class="col-md-4">
                             <h2 className='pb-4'>عيادات الدكتور أحمد أبوالنجا</h2>
                             <p>نوفر لك أفضل رعاية لأسنانك مع أحدث التقنيات.</p>
-                            <p><i class="fas fa-phone"></i> الهاتف - قويسنا : +20 123 456 7890</p>
-                            <p><i class="fas fa-phone"></i> الهاتف - طة شبرا: +20 10 40 46 7770</p>
+                            <p><i class="fas fa-phone"></i> الهاتف - قويسنا : 01227599182</p>
+                            <p><i class="fas fa-phone"></i> الهاتف - طة شبرا: 01040467770   </p>
                             <p><i class="fas fa-envelope"></i> البريد: info@clinic.com</p>
                         </div>
 
                         <div class="col-md-4">
-                            <h5>فروعنا</h5>
+                            <h4>فروعنا</h4>
                             <ul class="list-unstyled">
-                                <li><i class="fas fa-map-marker-alt"></i> الفرع الرئيسي: قويسنا - المنوفية </li>
-                                <li><i class="fas fa-map-marker-alt"></i> فرع طه شبرا -قويسنا -المنوفية </li>
-                                <li><i class="fas fa-map-marker-alt"></i> قريبا:  شبين الكوم - المنوفية </li>
+                                <li  className='my-4'><i class="fas fa-map-marker-alt"></i> الفرع الرئيسي: قويسنا - المنوفية </li>
+                                <li className='my-4'><i class="fas fa-map-marker-alt"></i> فرع طه شبرا -قويسنا -المنوفية </li>
+                                <li className='my-4'><i class="fas fa-map-marker-alt"></i> قريبا:  شبين الكوم - المنوفية </li>
                             </ul>
                         </div>
 

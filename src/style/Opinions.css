@@ -1,12 +1,13 @@
 /* TestimonialsSection.css */
 .testimonials-section {
   position: relative;
-  padding: 60px 20px;
+  padding: 80px 20px;
   margin: 0 auto;
   text-align: center;
   direction: rtl;
   background-image: url('../assets/img/bg1.jpg');
   background-position: center;
+  background-size: cover;
   overflow: hidden;
 }
 
@@ -17,7 +18,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.92);
   z-index: 1;
 }
 
@@ -33,6 +34,14 @@
   margin-bottom: 15px;
   position: relative;
   z-index: 2;
+  font-size: 32px;
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background-color: #4aa3df;
+  margin: 15px auto;
 }
 
 .section-subtitle {
@@ -40,22 +49,75 @@
   font-size: 18px;
   position: relative;
   z-index: 2;
+  margin-bottom: 30px;
 }
 
+/* Testimonials Slider Container */
+.testimonials-slider-container {
+  position: relative;
+  padding: 0 60px; /* Make room for arrows */
+  margin-bottom: 50px; /* Increased for dots */
+}
+
+/* Custom Navigation Arrows */
+.custom-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background-color: #4aa3df;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-slider-arrow:hover {
+  background-color: #2a6395;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.custom-slider-arrow:focus {
+  outline: none;
+}
+
+.custom-prev-arrow {
+  right: 0;
+}
+
+.custom-next-arrow {
+  left: 0;
+}
+
+/* تنسيقات كارت الآراء */
 .testimonial-card {
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   padding: 25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
   position: relative;
   z-index: 2;
+  margin: 15px 10px;
+  text-align: right;
+  height: 280px; /* Fixed height for all cards */
+  max-height: 280px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .testimonial-header {
@@ -65,13 +127,14 @@
 }
 
 .patient-image {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid #4aa3df;
-  box-shadow: 0 3px 8px rgba(74, 163, 223, 0.3);
+  box-shadow: 0 5px 15px rgba(74, 163, 223, 0.3);
   margin-left: 15px; /* RTL adjustment */
+  flex-shrink: 0;
 }
 
 .patient-image img {
@@ -86,13 +149,14 @@
 
 .patient-name {
   margin-bottom: 5px;
-  color: #333;
+  color: #2a6395;
   font-weight: 600;
+  font-size: 17px;
 }
 
 .patient-status {
   color: #4aa3df;
-  font-size: 14px;
+  font-size: 13px;
   background-color: rgba(74, 163, 223, 0.1);
   padding: 4px 12px;
   border-radius: 20px;
@@ -101,42 +165,35 @@
 
 .testimonial-body {
   position: relative;
+  flex-grow: 1;
+  overflow: hidden;
 }
 
 .quote-icon {
   color: rgba(74, 163, 223, 0.2);
-  font-size: 24px;
-  margin-left: 8px;
+  font-size: 22px;
+  margin-left: 6px;
+  position: relative;
+  top: -3px;
 }
 
 .testimonial-text {
   color: #666;
-  line-height: 1.7;
-  font-size: 16px;
+  line-height: 1.6;
+  font-size: 15px;
+  text-align: right;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 7; /* Limit to specific number of lines */
+  -webkit-box-orient: vertical;
+  max-height: 168px; /* Calculated based on line-height and font-size */
 }
 
-.btn-primary {
-  background-color: #4aa3df;
-  border-color: #4aa3df;
-  padding: 10px 30px;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 2;
-}
-
-.btn-primary:hover {
-  background-color: #3896d3;
-  border-color: #3896d3;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(74, 163, 223, 0.4);
-}
-
+/* تنسيق زر عرض المزيد */
 .opinion-btn {
   background-color: #4aa3df !important;
   color: #fff !important;
-  padding: 10px 30px;
+  padding: 12px 35px;
   border-radius: 30px;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -144,23 +201,130 @@
   z-index: 2;
   display: inline-block;
   text-decoration: none;
+  margin-top: 25px;
+  border: none;
+  box-shadow: 0 5px 15px rgba(74, 163, 223, 0.3);
 }
 
 .opinion-btn:hover {
-  background-color: #3896d3 !important;
+  background-color: #2a6395 !important;
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(74, 163, 223, 0.4);
+  box-shadow: 0 8px 20px rgba(42, 99, 149, 0.4);
 }
 
+/* تخصيص تنسيق السلايدر */
+.testimonials-slider {
+  padding: 10px 0;
+  overflow: visible;
+}
 
-/* Responsive adjustments */
+/* Equal height for all cards */
+.slider-item {
+  height: 280px !important; /* Fixed height to match card */
+  display: flex !important;
+}
+
+.slick-track {
+  display: flex !important;
+  align-items: stretch;
+}
+
+.slick-slide {
+  height: inherit !important;
+  display: flex !important;
+  float: none;
+}
+
+.slick-slide > div {
+  width: 100%;
+  display: flex !important;
+}
+
+/* تخصيص نقاط التنقل */
+.slick-dots {
+  bottom: -40px;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #4aa3df;
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #2a6395;
+}
+
+/* تعديلات للشاشات المختلفة */
+@media (max-width: 992px) {
+  .testimonials-section {
+    padding: 60px 15px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .testimonials-slider-container {
+    padding: 0 45px;
+  }
+  
+  .custom-slider-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 767px) {
+  .testimonial-card {
+    padding: 20px;
+  }
+  
   .patient-image {
     width: 60px;
     height: 60px;
   }
   
-  .testimonial-card {
-    padding: 20px;
+  .patient-name {
+    font-size: 16px;
+  }
+  
+  .testimonial-text {
+    font-size: 14px;
+  }
+  
+  .testimonials-slider-container {
+    padding: 0 35px;
+  }
+  
+  .custom-slider-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonials-section {
+    padding: 40px 10px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .section-subtitle {
+    font-size: 16px;
+  }
+  
+  .testimonials-slider-container {
+    padding: 0 30px;
+  }
+  
+  .custom-slider-arrow {
+    width: 32px;
+    height: 32px;
   }
 }
