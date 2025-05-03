@@ -136,7 +136,7 @@ export default function Opinions() {
     <section className="testimonials-section py-5">
       <div className="testimonials-content">
         <div className="container">
-          <div className="section-header text-center mb-5">
+          <div className="section-heading text-center mb-5">
             <h2 className="section-title">آراء المرضى</h2>
             <p className="section-subtitle">ماذا يقول عنا مرضانا الكرام</p>
             {/* <div className="divider mx-auto"></div> */}

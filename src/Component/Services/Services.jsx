@@ -9,7 +9,11 @@ import {
   FaArrowLeft,
   FaWhatsapp,
   FaPlus,
+  FaCheck,
 } from "react-icons/fa";
+
+
+
 import "../../style/Services.css";
 
 // استيراد الصور
@@ -143,7 +147,7 @@ export default function Services() {
                       <ul>
                         {service.features.map((feature, index) => (
                           <li key={index}>
-                            <FaCheckCircle /> {feature}
+                            <FaCheck /> {feature}
                           </li>
                         ))}
                       </ul>
@@ -161,7 +165,7 @@ export default function Services() {
 
         <div className="text-center">
           <a
-            href="https://wa.me/+201234567890?text=أرغب%20في%20حجز%20موعد%20في%20عيادتكم"
+            href="https://wa.me/+201227599182"
             className="appointment-btn"
             target="_blank"
             rel="noopener noreferrer"

@@ -91,7 +91,7 @@
   cursor: pointer;
   transition: all var(--transition-speed) ease;
   max-width: 180px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 

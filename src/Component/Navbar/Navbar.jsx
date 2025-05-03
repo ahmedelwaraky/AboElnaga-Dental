@@ -209,6 +209,7 @@ export default function Navbar() {
                 )}
               </li>
             </ul>
+
             <div className="social-icons">
               <a
                 href="https://www.facebook.com/AboelnagaDC"

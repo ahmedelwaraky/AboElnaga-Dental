@@ -1,13 +1,11 @@
 :root {
   --primary-color: #2c7db1;
-  --primary-dark: #245f88;
   --white: #ffffff;
   --black: #000000;
   --single-card-width: 280px;
   --cards-count: 11;
   --carousel-width: 3080px;
   --animation-duration: 60s !important;
-  --transition-speed: 0.3s;
 }
 
 * {
@@ -82,7 +80,7 @@ body {
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background-color: var(--primary-color);
+  background-color: #2c7db1;
 }
 
 .carousel-container {
@@ -92,55 +90,29 @@ body {
   padding: 40px 0;
   display: flex;
   justify-content: center;
-  cursor: grab; /* Show grab cursor on hover */
-  touch-action: pan-x; /* Improve touch interaction */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
-.carousel-container:active {
-  cursor: grabbing; /* Show grabbing cursor when active */
-}
-
-/* Important: track container */
+/* الجزء المهم: حاوية العناصر */
 .carousel-track {
   display: flex;
+  /* للتأكد من عرض العناصر دون تكديس */
   white-space: nowrap;
-  /* Graphics performance optimizations */
+  /* تحسينات أداء الرسومات */
   will-change: transform;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
-  touch-action: pan-x;
   
-  /* Animation: basis for preventing gaps */
+  /* الرسوم المتحركة: الأساس لمنع الفراغات */
   animation: perfectScroll var(--animation-duration) linear infinite;
 }
 
-/* Paused state - used with JS class */
-.carousel-track.paused {
-  animation-play-state: paused;
-}
-
 .doctor-card {
-  min-width: var(--single-card-width);
-  flex: 0 0 var(--single-card-width);
+  min-width: 250px;
+  flex: 0 0 250px;
   margin: 0 15px;
   text-align: center;
-  transition: all var(--transition-speed) ease;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Active doctor card state */
-.doctor-card.active {
-  transform: scale(1.05);
-  background-color: rgba(44, 125, 177, 0.1);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.doctor-card:hover {
-  transform: translateY(-5px);
+  transition: all 0.3s ease;
 }
 
 .doctor-img-container {
@@ -149,11 +121,6 @@ body {
   margin: 0 auto 20px;
   position: relative;
   overflow: visible;
-  transition: all var(--transition-speed) ease;
-}
-
-.doctor-card.active .doctor-img-container {
-  transform: scale(1.02);
 }
 
 .doctor-img {
@@ -164,11 +131,6 @@ body {
   border: 5px solid var(--primary-color);
   position: relative;
   z-index: 1;
-  transition: all var(--transition-speed) ease;
-}
-
-.doctor-card:hover .doctor-img {
-  border-color: var(--primary-dark);
 }
 
 .img-spinner {
@@ -179,25 +141,13 @@ body {
   height: calc(100% + 20px);
   border-radius: 50%;
   border: 3px dotted var(--primary-color);
-  animation: spin 60s linear infinite;
+  animation: spin 360s linear infinite !important;
   z-index: 0;
-  transition: all var(--transition-speed) ease;
-}
-
-.doctor-card.active .img-spinner {
-  animation-duration: 30s; /* Faster spin for active card */
-  border-width: 4px;
-  border-color: var(--primary-dark);
-}
-
-.doctor-card:hover .img-spinner {
-  animation-duration: 40s; /* Faster spin on hover */
 }
 
 .doctor-info {
   padding: 15px;
   color: var(--primary-color);
-  transition: all var(--transition-speed) ease;
 }
 
 .doctor-name {
@@ -205,23 +155,12 @@ body {
   font-weight: bold;
   margin-bottom: 5px;
   color: var(--primary-color);
-  transition: all var(--transition-speed) ease;
-}
-
-.doctor-card.active .doctor-name {
-  color: var(--primary-dark);
-  font-size: 22px;
 }
 
 .doctor-specialty {
   font-size: 16px;
   color: var(--primary-color);
   margin-bottom: 10px;
-  transition: all var(--transition-speed) ease;
-}
-
-.doctor-card.active .doctor-specialty {
-  font-weight: bold;
 }
 
 @keyframes spin {
@@ -233,65 +172,13 @@ body {
   }
 }
 
-/* Key for preventing gaps - continuous movement */
+/* المفتاح لمنع الفراغات - حركة مستمرة تمامًا */
 @keyframes perfectScroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-1 * var(--carousel-width)));
-  }
-}
-
-/* Carousel control buttons */
-.carousel-controls {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 30px;
-  padding-bottom: 30px;
-}
-
-.carousel-control {
-  background-color: var(--primary-color);
-  color: var(--white);
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 18px;
-  transition: all var(--transition-speed) ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-control:hover {
-  background-color: var(--primary-dark);
-  transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.carousel-control:active {
-  transform: scale(0.95);
-}
-
-/* Touch-specific optimizations */
-@media (pointer: coarse) {
-  .carousel-container {
-    cursor: default;
-  }
-  
-  .doctor-card {
-    padding: 5px;
-  }
-  
-  .carousel-control {
-    width: 50px;
-    height: 50px;
-    font-size: 22px;
+    transform: translateX(calc(-1 * var(--single-card-width) * var(--cards-count)));
   }
 }
 
@@ -316,10 +203,6 @@ body {
   
   :root {
     --single-card-width: 220px; 
-  }
-  
-  .carousel-controls {
-    margin-top: 20px;
   }
 }
 
@@ -348,10 +231,6 @@ body {
   }
   
   :root {
-    --single-card-width: 200px;
-  }
-  
-  .doctor-card.active {
-    transform: scale(1.03);
+    --single-card-width: 200px; /* عرض البطاقة + الهوامش للشاشات الصغيرة */
   }
 }
