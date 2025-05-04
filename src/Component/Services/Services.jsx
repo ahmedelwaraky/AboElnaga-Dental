@@ -2,20 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {
-  FaChevronRight,
-  FaChevronLeft,
-  FaCheckCircle,
-  FaArrowLeft,
-  FaWhatsapp,
-  FaPlus,
-  FaCheck,
-} from "react-icons/fa";
-
-
-
+import { FaChevronRight,FaChevronLeft, FaArrowLeft, FaWhatsapp,FaPlus, FaCheck,} from "react-icons/fa";
 import "../../style/Services.css";
-
 // استيراد الصور
 import ser1 from "../../assets/img/طقم.webp";
 import ser2 from "../../assets/img/حشو.png";
@@ -161,9 +149,10 @@ export default function Services() {
               </div>
             ))}
           </Slider>
-        </div>
 
-        <div className="text-center">
+         
+        </div>
+        <div className="text-center pt-5">
           <a
             href="https://wa.me/+201227599182"
             className="appointment-btn"
@@ -173,6 +162,8 @@ export default function Services() {
             احجز موعدًا الآن <FaWhatsapp />
           </a>
         </div>
+
+        
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ export default function Footer() {
                             <p>نوفر لك أفضل رعاية لأسنانك مع أحدث التقنيات.</p>
                             <p><i class="fas fa-phone"></i> الهاتف - قويسنا : 01227599182</p>
                             <p><i class="fas fa-phone"></i> الهاتف - طة شبرا: 01040467770   </p>
-                            <p><i class="fas fa-envelope"></i> البريد: info@clinic.com</p>
+                            <p><i class="fas fa-envelope"></i> البريد: ask@drahmedaboelnaga.com</p>
                         </div>
 
                         <div class="col-md-4">
@@ -26,10 +26,10 @@ export default function Footer() {
 
                         <div class="col-md-4">
                             <h5>تابعنا على</h5>
-                            <a href="https://www.facebook.com/AboelnagaDC" class="text-light "><i class="fab fa-facebook fa-2x"></i></a>
-                            <a href="https://www.instagram.com/aboelnagadc/" class="text-light me-3"><i class="fab fa-instagram fa-2x"></i></a>
-                            <a href="#" class="text-light me-3"><i class="fab fa-twitter fa-2x"></i></a>
-                            <a href="https://wa.me/+201227599182" class="text-light me-3"><i class="fab fa-whatsapp fa-2x"></i></a>
+                            <a href="https://www.facebook.com/AboelnagaDC" class="text-light" target='_blank'><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="https://www.instagram.com/aboelnagadc/" class="text-light me-3" target='_blank'><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="https://www.tiktok.com/@AboelnagaDC" class="text-light me-3" target='_blank'><i class="fab fa-tiktok fa-2x"></i></a>
+                            <a href="https://wa.me/+201227599182" class="text-light me-3" target='_blank'><i class="fab fa-whatsapp fa-2x"></i></a>
                         </div>
                     </div>
 

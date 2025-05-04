@@ -6,6 +6,8 @@ import Logo3 from "../../assets/img/3.png";
 import Logo4 from "../../assets/img/4.png";
 import Logo5 from "../../assets/img/5.png";
 import Logo6 from "../../assets/img/6.png";
+import Logo7 from "../../assets/img/7.png";
+import Logo8 from "../../assets/img/8.png";
 
 export default function Partners() {
   const partners = [
@@ -15,8 +17,8 @@ export default function Partners() {
     { id: 4, logo: Logo4 },
     { id: 5, logo: Logo5 },
     { id: 6, logo: Logo6 },
-    { id: 6, logo: Logo6 },
-    { id: 6, logo: Logo6 },
+    // { id: 7, logo: Logo7 },
+    // { id: 8, logo: Logo8 },
   ];
 
   return (

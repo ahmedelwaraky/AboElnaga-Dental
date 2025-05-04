@@ -29,16 +29,16 @@ export default function Naga() {
                   />
                   <div className="social-media">
                     <div className="links-wrapper">
-                      <a href="#" aria-label="فيسبوك">
+                      <a href="https://www.facebook.com/AboelnagaDC" aria-label="فيسبوك" target='_blank'>
                         <i className="fab fa-facebook-f"></i>
                       </a>
-                      <a href="#" aria-label="تويتر">
-                        <i className="fab fa-twitter"></i>
+                      <a href="https://www.tiktok.com/@AboelnagaDC" aria-label="تيك توك" target='_blank'>
+                      <i class="fab fa-tiktok"></i>
                       </a>
-                      <a href="#" aria-label="لينكد إن">
-                        <i className="fab fa-linkedin-in"></i>
+                      <a href="https://wa.me/+201227599182" aria-label="لينكد إن" target='_blank'>
+                        <i className="fab fa-whatsapp"></i>
                       </a>
-                      <a href="#" aria-label="انستغرام">
+                      <a href="https://www.instagram.com/aboelnagadc/" aria-label="انستغرام" target='_blank'>
                         <i className="fab fa-instagram"></i>
                       </a>
                     </div>
@@ -94,7 +94,7 @@ export default function Naga() {
                       </li>
                       <li className="my-2">
                         <span className="cv">البريد الإلكتروني:</span>{" "}
-                        dr.ahmed@naga-dental.com
+                        ask@drahmedaboelnaga.com
                       </li>
                     </div>
                     <div className="col-md-6"></div>
